@@ -28,5 +28,6 @@ var DRIVY = DRIVY || {};
     render(actors);
 
     return;
+      
   });
 }());
