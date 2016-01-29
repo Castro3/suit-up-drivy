@@ -32,6 +32,12 @@
     font-family: 'master_of_break';
     src: url('fonts/master_of_break.otf');
 }
+.estimation-heading{
+    font-size: 50px;
+    color: aliceblue;
+    font-family: 'master_of_break';
+    src: url('fonts/master_of_break.otf');
+}
 
 .intro-text {
     color: aliceblue;
