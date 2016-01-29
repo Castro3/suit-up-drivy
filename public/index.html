@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <title>Drivy Suit-up</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,16 +35,25 @@
         <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Go top</a>
+                <img style="-webkit-user-select: none" src="https://d3d350cu3obeqo.cloudfront.net/assets/header/logo-937f85c8f803599e1410d7b254394cdd17622e8073dc9033be38a628964ae81b.png">
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top">Go top</a>
+                    </li>
+                </ul>
+            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -53,51 +62,75 @@
     <!-- Intro Section -->
     <section id="intro" class="intro-section">
         <div class="container">
-            <div class="row ">
+            <h1 class="brand-heading">Drivy</h1>
+            <p class="intro-text">A good way to rent a car</p>
+
+            <div id="car" class="row top-high">
                 <div class="col-md-4">
-                    <input class="model textboxstyle" type="text" placeholder="Car model" />
+                    <input id="model" class="model textboxstyle" type="text" placeholder="Car model" />
                 </div>
                 <div class="col-md-4">
-                    <input class="price-by-day textboxstyle" type="number" placeholder="Price by day" />
+                    <input id="price-by-day" class="price-by-day textboxstyle" type="number" placeholder="Price by day" />
                 </div>
                 <div class="col-md-4">
-                    <input class="price-by-km textboxstyle" type="number" placeholder="Price by km" />
+                    <input id="price-by-km" class="price-by-km textboxstyle" type="number" placeholder="Price by km" />
                 </div>
 
             </div>
             <div class="row top-buffer">
+
                 <div class="col-md-4">
-                    <input class="begin textboxstyle" type="date" placeholder="Rental begin date" />
+                    <input id="begin" class="begin textboxstyle" type="date" placeholder="Rental begin date" />
                 </div>
                 <div class="col-md-4">
-                    <input class="end textboxstyle" type="date" placeholder="Rental end date" />
+                    <input id="end" class="end textboxstyle" type="date" placeholder="Rental end date" />
                 </div>
                 <div class="col-md-4">
-                    <input class="distance textboxstyle" type="number" placeholder="Distance in km" />
+                    <input id="distance" class="distance textboxstyle" type="number" placeholder="Distance in km" />
                 </div>
             </div>
             <div class="row top-buffer">
                 <p class="option-text">Option</p>
-                <input class="option textboxstyle" type="checkbox" placeholder="Deductible option" />
+                <input id="option" class="option textboxstyle" type="checkbox" placeholder="Deductible option" />
             </div>
             <div>
-                <a class="btn btn-default page-scroll" href="#about">Compute</a>
+                <a class="btn btn-default page-scroll" id="compute" href="#about">Compute</a>
             </div>
-            
+
 
 
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Calculate -->
+    <section id="about" class="result-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>About Section</h1>
-                </div>
+    
+                    <div class="row top-buffer">
+                        <div class="col-md-4">
+                            <p class="intro-text">Actors</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="intro-text">Type</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="intro-text">Amount</p>
+                        </div>
+                        <div id="actors">
+                        </div>
+                    </div>
+
+                    <script id="template" type="x-tmpl-mustache">
+                        {{#actors}}
+                        <div class="actor">
+                            <div class="col-md-4 option-text">{{who}}</div>
+                            <div class="col-md-4 option-text">{{type}}</div>
+                            <div class="col-md-4 option-text">{{amount}}</div>
+                        </div>
+                        {{/actors}}
+                    </script>
             </div>
-        </div>
     </section>
 
     <!-- jQuery -->
@@ -109,6 +142,9 @@
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/scrolling-nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <script src="drivy.js"></script>
+    <script src="index.js"></script>
 
 </body>
 

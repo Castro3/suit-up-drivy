@@ -1,7 +1,33 @@
-.top-buffer{
-    margin-top:20px;
+.top-buffer {
+    margin-top: 20px;
 }
-.textboxstyle{
+.top-high {
+    margin-top: 60px;
+}
+.textboxstyle {
     color: black;
     width: 200px
+}
+
+.intro-section {
+    background-color: #dddddd;
+}
+
+.result-section {
+    background-color: #dddddd;
+}
+
+.option-text {
+    color: black;
+}
+
+.brand-heading {
+    font-size: 100px;
+    color: #3483c5;
+    font-family: 'master_of_break';
+    src: url('fonts/master_of_break.otf');
+}
+
+.intro-text {
+    color: black;
 }
